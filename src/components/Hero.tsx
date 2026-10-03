@@ -3,9 +3,9 @@ import { ArrowRightIcon } from "./Icons";
 import { themeStyles } from "./theme";
 
 // Keeps the current site's signature (its green aurora image and the lab's
-// name in Playfair inside a white outlined box) but turns the hero into
-// something informative: who the lab is, where, what it works on, and what to
-// do next. The image is the lab's own, recompressed from a 1.7 MB PNG to WebP.
+// name in Playfair Display) but turns the hero into something informative:
+// who the lab is, where, what it works on, and what to do next. The image is
+// the lab's own, recompressed from a 1.7 MB PNG to WebP.
 export function Hero({
   lab,
   themes,
@@ -38,23 +38,22 @@ export function Hero({
         className="absolute inset-0 -z-10 bg-brand-950/65 lg:bg-transparent lg:bg-linear-to-r lg:from-brand-950/80 lg:via-brand-950/60 lg:to-brand-950/35"
       />
 
-      <div className="mx-auto grid max-w-6xl items-center gap-12 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-[1.35fr_1fr] lg:px-8 lg:py-24">
+      <div className="mx-auto grid max-w-6xl items-center gap-12 px-4 py-20 sm:px-6 sm:py-24 lg:grid-cols-[1.35fr_1fr] lg:px-8 lg:py-28">
         <div>
           <p className="text-sm font-semibold tracking-wide text-white">
             {lab.university} · {lab.college}
           </p>
           <h1
             id="hero-title"
-            className="mt-5 inline-block border-[3px] border-white px-5 py-3 font-serif text-4xl leading-[1.05] text-white min-[400px]:text-5xl sm:px-8 sm:py-5 lg:text-6xl"
+            className="mt-5 font-serif text-[2.75rem] leading-[1.05] text-white min-[400px]:text-6xl lg:text-7xl"
           >
             <span className="block">{lab.shortName}</span>
             <span className="block">AI4D Lab</span>
           </h1>
-          <p className="mt-6 max-w-xl font-serif text-xl font-bold text-white sm:text-2xl">
+          <p className="mt-6 max-w-xl text-xl leading-relaxed text-white sm:text-2xl">
             {lab.expansion}
           </p>
-          <p className="mt-4 max-w-xl text-lg leading-relaxed text-white">{lab.mission}</p>
-          <div className="mt-8 flex flex-wrap gap-3">
+          <div className="mt-10 flex flex-wrap gap-3">
             <a
               href={researchHref}
               className="inline-flex items-center gap-2 rounded-md bg-white px-5 py-3 font-semibold text-brand-800 hover:bg-brand-50"

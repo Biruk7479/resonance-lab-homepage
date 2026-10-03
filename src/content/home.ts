@@ -26,8 +26,6 @@ export const homeContent: HomeContent = {
     motto: "Harnessing AI for Sustainable and Inclusive Development",
     mission:
       "We focus on creating ethical and scalable AI solutions tailored to Ethiopia's specific needs, advancing key Sustainable Development Goals (SDGs) across health, agriculture, governance, and energy.",
-    // Source: About ("Background and Context"), closing sentence.
-    aim: "The RESONANCE AI4D Lab seeks to establish Ethiopia as a leader in Responsible AI, addressing critical national and regional issues through ethical, scalable, and inclusive AI applications.",
   },
 
   // Publications is left out until the page lists real publications

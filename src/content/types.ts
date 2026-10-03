@@ -16,7 +16,6 @@ export interface Lab {
   college: string;
   motto: string;
   mission: string;
-  aim: string;
 }
 
 export interface VisionPillar {

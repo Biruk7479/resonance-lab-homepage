@@ -15,7 +15,7 @@ export function Vision({ lab, vision }: { lab: Lab; vision: VisionPillar[] }) {
           <h2 id="vision-title" className="mt-4 text-3xl sm:text-4xl">
             Our Vision
           </h2>
-          <p className="mt-4 text-lg leading-relaxed text-muted">{lab.aim}</p>
+          <p className="mt-4 text-lg leading-relaxed text-muted">{lab.mission}</p>
           <figure className="mt-8 border-l-4 border-leaf-700 pl-5">
             <blockquote className="font-serif text-2xl leading-snug font-bold text-brand-800">
               &ldquo;{lab.motto}&rdquo;
