@@ -1,4 +1,6 @@
 import { Hero } from "@/components/Hero";
+import { Leadership } from "@/components/Leadership";
+import { Opportunities } from "@/components/Opportunities";
 import { ResearchThemes } from "@/components/ResearchThemes";
 import { SiteHeader } from "@/components/SiteHeader";
 import { Vision } from "@/components/Vision";
@@ -23,6 +25,18 @@ export default async function Home() {
           intro={content.researchIntro}
           themes={content.themes}
           researchHref={content.links.research}
+        />
+        <Opportunities
+          call={content.call}
+          benefits={content.benefits}
+          collaboration={content.collaboration}
+          newsHref={content.links.news}
+          email={content.contact.email}
+        />
+        <Leadership
+          intro={content.teamIntro}
+          people={content.leadership}
+          teamHref={content.links.team}
         />
       </main>
     </>
