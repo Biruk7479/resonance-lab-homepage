@@ -1,7 +1,9 @@
 import { Hero } from "@/components/Hero";
 import { Leadership } from "@/components/Leadership";
 import { Opportunities } from "@/components/Opportunities";
+import { Partners } from "@/components/Partners";
 import { ResearchThemes } from "@/components/ResearchThemes";
+import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { Vision } from "@/components/Vision";
 import { getHomeContent } from "@/lib/content";
@@ -38,7 +40,9 @@ export default async function Home() {
           people={content.leadership}
           teamHref={content.links.team}
         />
+        <Partners partners={content.partners} />
       </main>
+      <SiteFooter lab={content.lab} nav={content.nav} contact={content.contact} />
     </>
   );
 }

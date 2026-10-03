@@ -83,3 +83,21 @@ export function EnergyIcon(props: IconProps) {
     </Icon>
   );
 }
+
+export function MailIcon(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <rect x="3" y="5" width="18" height="14" rx="1.5" />
+      <path d="m3.5 6.5 8.5 6 8.5-6" />
+    </Icon>
+  );
+}
+
+export function MapPinIcon(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11Z" />
+      <circle cx="12" cy="10" r="2.5" />
+    </Icon>
+  );
+}
