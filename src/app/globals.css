@@ -12,13 +12,25 @@
   --color-brand-100: #dcece7;
   --color-brand-50: #eff6f4;
   --color-leaf-300: #a6dd7f; /* accent from the site's lime; decorative or on dark green only */
+  --color-leaf-700: #3d7f1f; /* lime end of the "Ready to join" banner, AA with white text */
+
+  /* Theme colour-coding from the current site (health blue, agriculture green,
+     governance purple, energy amber), deepened so text passes WCAG AA. */
+  --color-health: #1d5fb4;
+  --color-health-tint: #eaf2fd;
+  --color-agriculture: #2b7a34;
+  --color-agriculture-tint: #eaf6ec;
+  --color-governance: #6b3fa0;
+  --color-governance-tint: #f3eefb;
+  --color-energy: #935a00;
+  --color-energy-tint: #fdf4e1;
   --color-ink: #1d2939;
   --color-muted: #475467;
   --color-line: #d9e2df;
-  --color-surface: #f6f8f7;
+  --color-surface: #f8fafc; /* the current site's panel grey */
 
-  --font-sans: var(--font-plex-sans);
-  --font-serif: var(--font-plex-serif);
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-playfair);
 }
 
 @layer base {
@@ -34,9 +46,14 @@
   }
 
   h1,
-  h2,
-  h3 {
-    @apply font-serif text-brand-900;
+  h2 {
+    @apply font-serif font-bold text-brand-900;
+    text-wrap: balance;
+  }
+
+  h3,
+  h4 {
+    @apply font-sans font-semibold text-ink;
     text-wrap: balance;
   }
 

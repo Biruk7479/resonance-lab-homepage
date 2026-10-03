@@ -2,21 +2,22 @@ import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 
-// IBM Plex (SIL Open Font License), self-hosted: no third-party font requests.
-const plexSans = localFont({
+// The two typefaces the lab's current site already uses (Playfair Display for
+// the title, Inter for content), self-hosted: no third-party font requests.
+const inter = localFont({
   src: [
-    { path: "./fonts/ibm-plex-sans-latin-400-normal.woff2", weight: "400", style: "normal" },
-    { path: "./fonts/ibm-plex-sans-latin-600-normal.woff2", weight: "600", style: "normal" },
+    { path: "./fonts/inter-latin-400-normal.woff2", weight: "400", style: "normal" },
+    { path: "./fonts/inter-latin-600-normal.woff2", weight: "600", style: "normal" },
   ],
-  variable: "--font-plex-sans",
+  variable: "--font-inter",
   display: "swap",
   fallback: ["system-ui", "Segoe UI", "Roboto", "Arial", "sans-serif"],
 });
 
-const plexSerif = localFont({
-  src: "./fonts/ibm-plex-serif-latin-600-normal.woff2",
-  weight: "600",
-  variable: "--font-plex-serif",
+const playfair = localFont({
+  src: "./fonts/playfair-display-latin-700-normal.woff2",
+  weight: "700",
+  variable: "--font-playfair",
   display: "swap",
   fallback: ["Georgia", "Times New Roman", "serif"],
 });
@@ -41,7 +42,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${plexSans.variable} ${plexSerif.variable}`}>
+    <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
       <body>{children}</body>
     </html>
   );
