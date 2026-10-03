@@ -45,3 +45,41 @@ export function ArrowRightIcon(props: IconProps) {
     </Icon>
   );
 }
+
+export function HealthIcon(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <path d="M12 20s-7.5-4.6-7.5-10A4.25 4.25 0 0 1 12 7.2 4.25 4.25 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10Z" />
+      <path d="M3 12.5h4.5L9 10l2.5 5 2-3.5H21" />
+    </Icon>
+  );
+}
+
+export function AgricultureIcon(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <path d="M12 21v-9" />
+      <path d="M12 12C12 8.5 9.5 6 5 6c0 4 2.5 6 7 6Z" />
+      <path d="M12 14.5c0-3.5 2.5-6 7-6 0 4-2.5 6-7 6Z" />
+      <path d="M7 21h10" />
+    </Icon>
+  );
+}
+
+export function GovernanceIcon(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <path d="M12 4v16M8 20h8M5 7h14" />
+      <path d="M5 7 2.5 13h5L5 7ZM19 7l-2.5 6h5L19 7Z" />
+      <path d="M2.5 13a2.5 2.5 0 0 0 5 0M16.5 13a2.5 2.5 0 0 0 5 0" />
+    </Icon>
+  );
+}
+
+export function EnergyIcon(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <path d="M13 2 4.5 13.5H12l-1 8.5 8.5-11.5H12L13 2Z" />
+    </Icon>
+  );
+}

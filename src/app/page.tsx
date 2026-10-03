@@ -1,4 +1,5 @@
 import { Hero } from "@/components/Hero";
+import { ResearchThemes } from "@/components/ResearchThemes";
 import { SiteHeader } from "@/components/SiteHeader";
 import { Vision } from "@/components/Vision";
 import { getHomeContent } from "@/lib/content";
@@ -18,6 +19,11 @@ export default async function Home() {
       <main id="main">
         <Hero lab={content.lab} researchHref={content.links.research} />
         <Vision vision={content.vision} />
+        <ResearchThemes
+          intro={content.researchIntro}
+          themes={content.themes}
+          researchHref={content.links.research}
+        />
       </main>
     </>
   );
