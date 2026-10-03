@@ -58,11 +58,6 @@ export interface Call {
   inclusion: string;
 }
 
-export interface Benefit {
-  title: string;
-  text: string;
-}
-
 export interface Partner {
   name: string;
   logo: string;
@@ -84,8 +79,6 @@ export interface HomeContent {
   teamIntro: string;
   leadership: Person[];
   call: Call;
-  benefits: Benefit[];
-  collaboration: { text: string; href: string };
   partners: Partner[];
   contact: Contact;
   links: Record<"about" | "research" | "team" | "news" | "getInvolved" | "contact", string>;

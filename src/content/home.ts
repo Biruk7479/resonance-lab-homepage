@@ -176,32 +176,6 @@ export const homeContent: HomeContent = {
       "We actively encourage applications from women, persons with disabilities, and candidates from underrepresented groups.",
   },
 
-  // Source: Get Involved ("Benefits of Participation for Students").
-  benefits: [
-    {
-      title: "Monthly research stipend",
-      text: "A reasonable monthly stipend so students can focus on their research.",
-    },
-    {
-      title: "Supervision & mentorship",
-      text: "Guidance from domain experts in health, agriculture, governance, and energy.",
-    },
-    {
-      title: "Lab infrastructure",
-      text: "Computing resources, software tools, IoT kits, and curated datasets.",
-    },
-    {
-      title: "Publications & conferences",
-      text: "Opportunities to co-author publications and present at conferences.",
-    },
-  ],
-
-  // Source: Get Involved ("Collaborate & Partner with Us").
-  collaboration: {
-    text: "We actively seek strategic collaborations with academic institutions, government entities, industry partners, and community organizations.",
-    href: links.getInvolved,
-  },
-
   // Source: Home ("Our Partners"). Logos are the files the lab already publishes.
   partners: [
     {

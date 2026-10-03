@@ -1,6 +1,6 @@
 import { Hero } from "@/components/Hero";
+import { JoinBanner } from "@/components/JoinBanner";
 import { Leadership } from "@/components/Leadership";
-import { Opportunities } from "@/components/Opportunities";
 import { Partners } from "@/components/Partners";
 import { ResearchThemes } from "@/components/ResearchThemes";
 import { SiteFooter } from "@/components/SiteFooter";
@@ -28,13 +28,7 @@ export default async function Home() {
           themes={content.themes}
           researchHref={content.links.research}
         />
-        <Opportunities
-          call={content.call}
-          benefits={content.benefits}
-          collaboration={content.collaboration}
-          newsHref={content.links.news}
-          email={content.contact.email}
-        />
+        <JoinBanner call={content.call} newsHref={content.links.news} email={content.contact.email} />
         <Leadership
           intro={content.teamIntro}
           people={content.leadership}
