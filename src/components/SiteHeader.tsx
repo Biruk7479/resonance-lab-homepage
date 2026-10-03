@@ -9,7 +9,7 @@ export function SiteHeader({ lab, nav }: { lab: Lab; nav: NavItem[] }) {
   return (
     <header className="sticky top-0 z-40 bg-brand-900 text-white shadow-[0_1px_0_rgb(255_255_255/0.08)]">
       <div className="relative mx-auto flex h-16 max-w-6xl items-center justify-between gap-3 px-4 sm:gap-6 sm:px-6 lg:px-8">
-        <Link href="/" className="flex items-center gap-3 rounded-sm">
+        <Link href="/" aria-current="page" className="flex items-center gap-3 rounded-sm">
           <Image
             src="/images/aau-seal.webp"
             alt=""
