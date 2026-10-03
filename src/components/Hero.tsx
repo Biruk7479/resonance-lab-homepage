@@ -32,10 +32,10 @@ export function Hero({
         fetchPriority="high"
         className="absolute inset-0 -z-20 size-full object-cover"
       />
-      {/* Darker on the text side so every line stays above 4.5:1 contrast. */}
+      {/* Uniform on small screens, darker on the text side on desktop: every line stays above 4.5:1. */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 -z-10 bg-linear-to-r from-brand-950/80 via-brand-950/60 to-brand-950/35"
+        className="absolute inset-0 -z-10 bg-brand-950/65 lg:bg-transparent lg:bg-linear-to-r lg:from-brand-950/80 lg:via-brand-950/60 lg:to-brand-950/35"
       />
 
       <div className="mx-auto grid max-w-6xl items-center gap-12 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-[1.35fr_1fr] lg:px-8 lg:py-24">
