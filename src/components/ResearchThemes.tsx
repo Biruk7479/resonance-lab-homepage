@@ -2,9 +2,9 @@ import type { ResearchTheme } from "@/content/types";
 import { ArrowRightIcon } from "./Icons";
 import { themeStyles } from "./theme";
 
-// "Key Focus Areas" from the current homepage. The theme colours stay, but as
-// accents on white cards, and each card says what the theme covers and which SDG
-// it serves. The detailed research directions stay on the Research page.
+// "Key Focus Areas" from the current homepage. The theme colour survives only in
+// the small icon, so the section stays calm; each card says what the theme
+// covers and which SDG it serves. Research directions stay on the Research page.
 export function ResearchThemes({
   intro,
   themes,
@@ -41,11 +41,11 @@ export function ResearchThemes({
               <li
                 key={theme.id}
                 id={`theme-${theme.id}`}
-                className={`flex scroll-mt-24 flex-col rounded-2xl border border-line border-t-4 bg-white p-6 sm:p-8 ${style.border}`}
+                className="flex scroll-mt-24 flex-col rounded-2xl border border-line bg-white p-6 sm:p-8"
               >
                 <div className="flex items-center gap-4">
                   <span
-                    className={`flex size-12 shrink-0 items-center justify-center rounded-full ${style.tint} ${style.text}`}
+                    className={`flex size-12 shrink-0 items-center justify-center rounded-full bg-surface ${style.text}`}
                   >
                     <style.Icon className="size-6" />
                   </span>
@@ -54,7 +54,7 @@ export function ResearchThemes({
                 <p className="mt-4 leading-relaxed text-muted">{theme.summary}</p>
                 <p className="mt-auto pt-6 text-sm">
                   <span
-                    className={`inline-flex rounded-full px-3 py-1 font-semibold ${style.tint} ${style.text}`}
+                    className="inline-flex rounded-full border border-line bg-surface px-3 py-1 font-semibold text-muted"
                   >
                     SDG {theme.sdg.number} · {theme.sdg.name}
                   </span>
