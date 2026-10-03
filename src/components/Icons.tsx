@@ -55,7 +55,7 @@ export function HealthIcon(props: IconProps) {
   );
 }
 
-export function AgricultureIcon(props: IconProps) {
+export function SproutIcon(props: IconProps) {
   return (
     <Icon {...props}>
       <path d="M12 21v-9" />
@@ -98,6 +98,36 @@ export function MapPinIcon(props: IconProps) {
     <Icon {...props}>
       <path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11Z" />
       <circle cx="12" cy="10" r="2.5" />
+    </Icon>
+  );
+}
+
+export function WheatIcon(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <path d="M12 22V9" />
+      <path d="M12 9c-1.9-.7-3-2.4-3-4.5 1.9.7 3 2.4 3 4.5Zm0 0c1.9-.7 3-2.4 3-4.5-1.9.7-3 2.4-3 4.5Z" />
+      <path d="M12 14c-2.1-.7-3.4-2.4-3.4-4.6 2.1.7 3.4 2.4 3.4 4.6Zm0 0c2.1-.7 3.4-2.4 3.4-4.6-2.1.7-3.4 2.4-3.4 4.6Z" />
+      <path d="M12 19c-2.1-.7-3.4-2.4-3.4-4.6 2.1.7 3.4 2.4 3.4 4.6Zm0 0c2.1-.7 3.4-2.4 3.4-4.6-2.1.7-3.4 2.4-3.4 4.6Z" />
+    </Icon>
+  );
+}
+
+export function LightbulbIcon(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <path d="M9 18h6M10 21h4" />
+      <path d="M12 3a6 6 0 0 0-3.6 10.8c.7.5 1.1 1.3 1.1 2.1v.1h5v-.1c0-.8.4-1.6 1.1-2.1A6 6 0 0 0 12 3Z" />
+    </Icon>
+  );
+}
+
+export function PeopleIcon(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <circle cx="9" cy="8" r="3.25" />
+      <path d="M3 20a6 6 0 0 1 12 0" />
+      <path d="M16 5.2a3 3 0 0 1 0 5.6M18 14.5a5.5 5.5 0 0 1 3 5" />
     </Icon>
   );
 }

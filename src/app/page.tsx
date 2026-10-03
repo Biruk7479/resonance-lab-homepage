@@ -21,8 +21,8 @@ export default async function Home() {
       </a>
       <SiteHeader lab={content.lab} nav={content.nav} />
       <main id="main">
-        <Hero lab={content.lab} researchHref={content.links.research} />
-        <Vision vision={content.vision} />
+        <Hero lab={content.lab} themes={content.themes} researchHref={content.links.research} />
+        <Vision lab={content.lab} vision={content.vision} />
         <ResearchThemes
           intro={content.researchIntro}
           themes={content.themes}
