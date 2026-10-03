@@ -18,7 +18,7 @@ On top of that, out-of-date dates and placeholder entries ("Title goes here", "+
 |---|---|---|
 | Content organisation | Fair | Strong inner-page content, but the homepage doesn't say who the lab is, where it is, or what's happening now |
 | Navigation | Poor | The real menu is hidden under "Home ▾"; the button rows change on every page; Contact is missing from them |
-| Visual design | Fair | The brand green works; emoji icons, 5 font families, off-brand blue and purple, and uneven logos don't |
+| Visual design | Fair | The brand green and theme colours work; emoji icons, 5 font families, off-brand blue, and uneven logos don't |
 | Mobile | **Poor** | Embedded sections are clipped to their headings, so phone visitors miss most of the content |
 | Accessibility | Poor | Missing alt text, 2:1 contrast, emoji read aloud, every iframe announced as "Custom embed" |
 | Clarity and credibility | **Poor** | "Applications are now open" for a call that closed in August 2025; placeholder publications and phone number |
@@ -84,14 +84,14 @@ Today is October 2026, and the homepage still says *"Applications for our MSc an
 
 <table><tr>
 <td valign="top" width="50%"><img src="docs/assessment/03-emoji-icons.png" width="370" alt="Vision and focus-area cards using emoji as icons: light bulb, seedling, handshake, hospital, wheat, scales, lightning."><br><sub>Emoji used as icons on the homepage.</sub></td>
-<td valign="top" width="50%"><img src="docs/assessment/04-team-avatars.png" width="370" alt="Thematic leads shown as bright blue, green, purple and orange circles with first names written inside."><br><sub>Placeholder avatars in four unrelated colours, with names written inside and shrunk to fit ("Dr. Elefelious").</sub></td>
+<td valign="top" width="50%"><img src="docs/assessment/04-team-avatars.png" width="370" alt="Thematic leads shown as bright blue, green, purple and orange circles with first names written inside."><br><sub>Placeholder avatars with names written inside and shrunk to fit ("Dr. Elefelious"). The colours follow the theme coding, but nothing explains it.</sub></td>
 </tr></table>
 
 - **Emoji icons** look different on Windows, Android and iOS. Screen readers read them aloud ("light bulb", "seedling"). Next to a university seal they look informal.
 - **Five font families on one page:** Roboto, Google Sans, Playfair Display, Open Sans and Inter. The header uses a serif, the buttons Open Sans, and the content Inter.
-- **Off-brand colours.** The brand is a dark green (`#005747`) that works well: white text on it reaches 8.6 : 1. The embeds add Tailwind's default blue for headings and buttons, purple and orange avatars, and a lime gradient.
+- **Off-brand colours.** The brand is a dark green (`#005747`) that works well: white text on it reaches 8.6 : 1. The embeds add Tailwind's default blue for headings and buttons, and a lime gradient. The site also colour-codes its four themes (health blue, agriculture green, governance purple, energy amber) on the focus-area cards and team avatars. That's a good idea worth keeping, but the saturated defaults clash with the brand green and the coding is never explained.
 - **Cards inside cards.** Content sits in a white card, inside a grey panel, inside the page. The extra frames add visual noise and narrow the text column, and the content is narrower than the button row above it.
-- **Team avatars.** Each one writes "Dr. Bisrat", "Dr. Beakal" and so on in a coloured circle. Long names get squeezed, the colours carry no meaning, and the images depend on an outside placeholder service. Real photos (with consent) or two-letter initials in one brand colour would both work better.
+- **Team avatars.** Each one writes "Dr. Bisrat", "Dr. Beakal" and so on in a coloured circle. Long names get squeezed, the theme colour-coding isn't explained, and the images depend on an outside placeholder service. Real photos (with consent), or two-letter initials in each person's theme colour, would both work better.
 - **The lab's name varies:** "Resonance Lab", "RESONANCE AI4D Lab", "Resonance AI4D Lab" and "RESONANCE AI4D Lab @CTBE" all appear.
 
 ---
@@ -142,7 +142,7 @@ I compared the site with four sites that do a similar job well:
 | A single row of text links, with dropdowns where needed (all four) | Hidden dropdown plus a boxy button row | One text navigation, current page marked |
 | Compact logo with a small stacked descriptor (HAI, AI4D) | Seal plus a long serif title | Short wordmark with "AI4D Lab · Addis Ababa University" set small |
 | SVG line icons (20–61 inline SVGs per homepage) | Emoji | Simple inline SVG icons in brand colours |
-| 1–2 font families (Makerere: Figtree + Space Grotesk; AI4D: Inter + a serif) | 5 families | One serif for headings, one sans-serif for text |
+| 1–2 font families (Makerere: Figtree + Space Grotesk; AI4D: Inter + a serif) | 5 families | Two: the lab's own Playfair Display for headings and Inter for text |
 | Compact footer with contact and links; logos at equal height (AI4D) | Logo wall, no contact | A footer with address, email, links and small labelled logos |
 | A dated news item on the homepage (HAI) | Outdated "now open" banner | Show what's current, with real dates and the call's status |
 | Photos of real people (Makerere, AI4D) | Placeholder avatars | Use real photos when the lab has them; until then, honest initials, never stock photos |
@@ -187,7 +187,7 @@ Weight isn't consistently better: Makerere's homepage is 8 MB, but AI4D's is und
 | # | Recommendation | Fixes | Effort | In prototype |
 |---|---|---|---|---|
 | 4 | One flat navigation: pages not nested under Home, text links with consistent labels, Contact included, current page marked, a proper menu on phones | Navigation | Low | **Yes** |
-| 5 | A small visual system: two typefaces, the brand-green palette, SVG icons instead of emoji, one card style | Visual design | Medium | **Yes** |
+| 5 | A small visual system that keeps the lab's identity: its two typefaces (Playfair Display, Inter), the brand green and theme colours tuned for contrast, SVG icons instead of emoji, one card style | Visual design | Medium | **Yes** |
 | 6 | A compact footer with contact details, address, links, and partner logos at equal height with alt text | Footer, accessibility | Low | **Yes** |
 | 7 | Right-size images: a CSS gradient instead of the 1.7 MB hero, the seal at 2× display size | Performance | Low | **Yes** |
 | 8 | Accessibility basics: contrast, alt text, visible focus, skip link, one heading outline, descriptive page titles and descriptions | Accessibility, findability | Low | **Yes** |
@@ -196,7 +196,7 @@ Weight isn't consistently better: Makerere's homepage is 8 MB, but AI4D's is und
 
 | # | Recommendation | Fixes | In prototype |
 |---|---|---|---|
-| 9 | Real team photos (with consent); until then, initials in one brand colour | Team credibility | Initials only, on the homepage |
+| 9 | Real team photos (with consent); until then, initials in each person's theme colour | Team credibility | Initials only, on the homepage |
 | 10 | A RESONANCE wordmark or logo used alongside the AAU seal | Identity | Text wordmark only |
 | 11 | Content ownership: a named owner and review date for News & Events and the call | Staleness | No; documented |
 | 12 | A copy-editing pass: one name for the lab ("RESONANCE AI4D Lab"), fix small errors (e.g., "an Masters position"), and align the Masters entry requirement (Get Involved says "MSc or equivalent", the call says "BSc, min CGPA 3") | Clarity | Consistent naming on the homepage |
