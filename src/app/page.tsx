@@ -28,7 +28,7 @@ export default async function Home() {
           themes={content.themes}
           researchHref={content.links.research}
         />
-        <JoinBanner call={content.call} newsHref={content.links.news} email={content.contact.email} />
+        <JoinBanner call={content.call} newsHref={content.links.news} />
         <Leadership
           intro={content.teamIntro}
           people={content.leadership}

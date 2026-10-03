@@ -5,18 +5,10 @@ import { CallStatus } from "./CallStatus";
 // The current site's "Ready to Join Our Team?" banner, kept in its green
 // gradient but ending on a deeper green so white text stays above 4.5:1
 // (the original lime end is 2.05:1), and saying honestly whether a call is open.
-export function JoinBanner({
-  call,
-  newsHref,
-  email,
-}: {
-  call: Call;
-  newsHref: string;
-  email: string;
-}) {
+export function JoinBanner({ call, newsHref }: { call: Call; newsHref: string }) {
   return (
     <section id="join" aria-labelledby="join-title" className="scroll-mt-20 bg-surface">
-      <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
+      <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
         <div className="grid gap-10 rounded-2xl bg-linear-to-br from-brand-700 to-leaf-700 p-6 text-white shadow-lg sm:p-10 lg:grid-cols-[1.15fr_1fr] lg:gap-12">
           <div>
             <p className="text-sm font-semibold tracking-wider text-white uppercase">{call.title}</p>
@@ -33,13 +25,6 @@ export function JoinBanner({
                 newsHref={newsHref}
               />
             </div>
-            <p className="mt-8 text-[0.9375rem] leading-relaxed text-white">{call.inclusion}</p>
-            <p className="mt-2 text-[0.9375rem] text-white">
-              Questions:{" "}
-              <a href={`mailto:${email}`} className="font-semibold underline underline-offset-2">
-                {email}
-              </a>
-            </p>
           </div>
 
           <div className="self-start rounded-xl bg-brand-950/40 p-5 sm:p-6">

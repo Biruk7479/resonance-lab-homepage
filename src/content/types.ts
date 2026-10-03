@@ -27,15 +27,12 @@ export interface ResearchTheme {
   id: ThemeId;
   title: string;
   summary: string;
-  focus: string[];
   sdg: { number: number; name: string };
 }
 
 export interface Person {
   name: string;
   role: string;
-  degree: string;
-  expertise: string;
   theme?: ThemeId;
 }
 
@@ -54,7 +51,6 @@ export interface Call {
   milestones: Milestone[];
   applyUrl: string;
   detailsUrl: string;
-  inclusion: string;
 }
 
 export interface Partner {

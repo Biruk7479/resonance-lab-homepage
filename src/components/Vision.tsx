@@ -9,7 +9,7 @@ const pillarIcons: ComponentType<SVGProps<SVGSVGElement>>[] = [LightbulbIcon, Sp
 export function Vision({ lab, vision }: { lab: Lab; vision: VisionPillar[] }) {
   return (
     <section aria-labelledby="vision-title" className="bg-surface">
-      <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-2 lg:gap-16 lg:px-8">
+      <div className="mx-auto grid max-w-6xl gap-10 px-4 py-16 sm:px-6 sm:py-24 lg:grid-cols-2 lg:gap-16 lg:px-8">
         <div>
           <span aria-hidden="true" className="block h-1 w-12 rounded-full bg-brand-700" />
           <h2 id="vision-title" className="mt-4 text-3xl sm:text-4xl">

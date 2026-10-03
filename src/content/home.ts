@@ -66,11 +66,6 @@ export const homeContent: HomeContent = {
       title: "Innovative Health Solutions",
       summary:
         "Developing AI-powered tools to improve healthcare access and outcomes, particularly in rural and underserved areas.",
-      focus: [
-        "AI telemedicine for rural health",
-        "AI diagnostics for early detection",
-        "Predictive analytics for outbreak management",
-      ],
       sdg: { number: 3, name: "Good Health & Well-being" },
     },
     {
@@ -78,11 +73,6 @@ export const homeContent: HomeContent = {
       title: "Resilient Agriculture & Food Systems",
       summary:
         "Leveraging AI and IoT to enhance food security, improve productivity, and mitigate climate variability in agriculture.",
-      focus: [
-        "Precision agriculture and resource optimization",
-        "AI-driven dairy management",
-        "AI for wheat disease management",
-      ],
       sdg: { number: 2, name: "Zero Hunger" },
     },
     {
@@ -90,11 +80,6 @@ export const homeContent: HomeContent = {
       title: "Inclusive Governance & Justice",
       summary:
         "Enhancing transparency, optimizing decision-making, and improving public service delivery through AI.",
-      focus: [
-        "AI-driven judicial case management",
-        "Natural language processing and resource allocation",
-        "Sentiment analysis for policy feedback",
-      ],
       sdg: { number: 16, name: "Peace, Justice & Strong Institutions" },
     },
     {
@@ -102,11 +87,6 @@ export const homeContent: HomeContent = {
       title: "Sustainable Energy & Climate Resilience",
       summary:
         "Designing AI-powered models to optimize energy forecasting, promote sustainable energy, and build climate resilience.",
-      focus: [
-        "Energy demand forecasting",
-        "AI for energy distribution",
-        "Climate risk prediction and early warning",
-      ],
       sdg: { number: 7, name: "Affordable & Clean Energy" },
     },
   ],
@@ -120,36 +100,25 @@ export const homeContent: HomeContent = {
     {
       name: "Dr. Fitsum Assamnew",
       role: "Lab Director / Principal Investigator",
-      degree: "PhD in Computer Engineering",
-      expertise:
-        "Extensive experience in AI applications in health, agriculture, cybersecurity, and computer architecture research.",
     },
     {
       name: "Dr. Bisrat Derebssa",
       role: "Innovative Health Solutions Lead",
-      degree: "PhD in Computer Engineering",
-      expertise: "Expertise in ML-based health solutions and signal processing.",
       theme: "health",
     },
     {
       name: "Dr. Beakal Gizachew",
       role: "Resilient Agriculture Lead",
-      degree: "PhD in Computer Science",
-      expertise: "Extensive experience in AI for agriculture and geospatial analytics.",
       theme: "agriculture",
     },
     {
       name: "Dr. Henock Mulugeta",
       role: "Inclusive Governance Lead",
-      degree: "PhD in Computer Engineering",
-      expertise: "Expertise in cybersecurity and AI governance.",
       theme: "governance",
     },
     {
       name: "Dr. Elefelious Getachew",
       role: "Sustainable Energy & Climate Resilience Lead",
-      degree: "PhD in Computer Science",
-      expertise: "Expertise in climate resilience and AI integration.",
       theme: "energy",
     },
   ],
@@ -170,8 +139,6 @@ export const homeContent: HomeContent = {
     ],
     applyUrl: "https://forms.gle/aaA23pZLkq8SzsnU7",
     detailsUrl: `${SITE}/get-involved/application-202526`,
-    inclusion:
-      "We actively encourage applications from women, persons with disabilities, and candidates from underrepresented groups.",
   },
 
   // Source: Home ("Our Partners"). Logos are the files the lab already publishes.

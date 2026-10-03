@@ -9,21 +9,6 @@ function initials(name: string): string {
   return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
 }
 
-function Avatar({ person, size }: { person: Person; size: "lg" | "md" }) {
-  const colours = person.theme
-    ? `${themeStyles[person.theme].tint} ${themeStyles[person.theme].text}`
-    : "bg-brand-700 text-white";
-  const dimensions = size === "lg" ? "size-20 text-2xl" : "size-14 text-lg";
-  return (
-    <span
-      aria-hidden="true"
-      className={`${dimensions} ${colours} inline-flex shrink-0 items-center justify-center rounded-full font-serif font-bold`}
-    >
-      {initials(person.name)}
-    </span>
-  );
-}
-
 export function Leadership({
   intro,
   people,
@@ -33,11 +18,9 @@ export function Leadership({
   people: Person[];
   teamHref: string;
 }) {
-  const [director, ...leads] = people;
-
   return (
     <section id="team" aria-labelledby="team-title" className="scroll-mt-20 bg-white">
-      <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
+      <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
         <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-3xl">
             <span aria-hidden="true" className="block h-1 w-12 rounded-full bg-brand-700" />
@@ -55,33 +38,30 @@ export function Leadership({
           </a>
         </div>
 
-        <article className="mt-10 flex flex-col gap-5 rounded-2xl bg-surface p-6 sm:flex-row sm:items-center sm:p-8">
-          <Avatar person={director} size="lg" />
-          <div>
-            <p className="text-sm font-semibold text-brand-700">{director.role}</p>
-            <h3 className="mt-1 font-serif text-2xl font-bold text-brand-900">{director.name}</h3>
-            <p className="mt-1 text-[0.9375rem] text-muted">{director.degree}</p>
-            <p className="mt-2 max-w-2xl leading-relaxed">{director.expertise}</p>
-          </div>
-        </article>
-
-        <h3 className="mt-10 text-sm font-semibold tracking-wider text-muted uppercase">
-          Thematic Leads
-        </h3>
-        <ul className="mt-4 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {leads.map((person) => (
-            <li key={person.name} className="flex flex-col rounded-2xl border border-line p-6">
-              <Avatar person={person} size="md" />
-              <p
-                className={`mt-4 text-sm font-semibold ${person.theme ? themeStyles[person.theme].text : "text-brand-700"}`}
+        {/* The director sits in the same row as the thematic leads, at the same size. */}
+        <ul className="mt-12 grid gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
+          {people.map((person) => {
+            const style = person.theme ? themeStyles[person.theme] : null;
+            return (
+              <li
+                key={person.name}
+                className="flex flex-col items-center rounded-2xl border border-line px-5 py-7 text-center"
               >
-                {person.role}
-              </p>
-              <h4 className="mt-1 font-serif text-lg font-bold text-brand-900">{person.name}</h4>
-              <p className="mt-1 text-sm text-muted">{person.degree}</p>
-              <p className="mt-3 text-[0.9375rem] leading-relaxed">{person.expertise}</p>
-            </li>
-          ))}
+                <span
+                  aria-hidden="true"
+                  className={`flex size-16 items-center justify-center rounded-full font-serif text-xl font-bold ${
+                    style ? `${style.tint} ${style.text}` : "bg-brand-700 text-white"
+                  }`}
+                >
+                  {initials(person.name)}
+                </span>
+                <h3 className="mt-4 font-serif text-lg font-bold text-brand-900">{person.name}</h3>
+                <p className={`mt-1 text-sm font-semibold ${style ? style.text : "text-brand-700"}`}>
+                  {person.role}
+                </p>
+              </li>
+            );
+          })}
         </ul>
       </div>
     </section>
