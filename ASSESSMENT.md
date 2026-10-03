@@ -1,5 +1,7 @@
 # RESONANCE AI4D Lab website: assessment and recommendations
 
+> **Short version:** [ASSESSMENT-BRIEF.pdf](ASSESSMENT-BRIEF.pdf) (two pages: issues, severity and recommendations). This document is the full version, with evidence.
+
 **Site reviewed:** <https://sites.google.com/aait.edu.et/resonance-lab/home> (all 9 pages)\
 **When:** 3–4 October 2026\
 **How:** Chrome at 1440 px (desktop) and 390 px (phone), Lighthouse 12, a manual accessibility pass, and a reading of the source of every page. All screenshots are of the live site as found.
