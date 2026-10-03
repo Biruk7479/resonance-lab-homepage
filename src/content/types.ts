@@ -78,7 +78,9 @@ export interface HomeContent {
   lab: Lab;
   nav: NavItem[];
   vision: VisionPillar[];
+  researchIntro: string;
   themes: ResearchTheme[];
+  teamIntro: string;
   leadership: Person[];
   call: Call;
   benefits: Benefit[];

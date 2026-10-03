@@ -55,6 +55,10 @@ export const homeContent: HomeContent = {
     },
   ],
 
+  // Source: Research (introduction).
+  researchIntro:
+    "Our interdisciplinary approach combines rigorous AI model development with participatory methods, ensuring our solutions are technically robust, ethically sound, and impactful for local communities.",
+
   // Source: Research ("Thematic Research Areas"); SDGs from About ("Alignment with SDGs").
   themes: [
     {
@@ -106,6 +110,10 @@ export const homeContent: HomeContent = {
       sdg: { number: 7, name: "Affordable & Clean Energy" },
     },
   ],
+
+  // Source: Team (introduction).
+  teamIntro:
+    "The RESONANCE AI4D Lab is powered by a dedicated and diverse team of researchers, academics, and professionals committed to leveraging AI for sustainable development in Ethiopia.",
 
   // Source: Team ("Lab Leadership", "Thematic Leads").
   leadership: [
