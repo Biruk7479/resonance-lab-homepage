@@ -1,5 +1,5 @@
 import type { Benefit, Call } from "@/content/types";
-import { formatDay } from "@/lib/dates";
+import { formatDay, isOpen } from "@/lib/dates";
 import { CallStatus } from "./CallStatus";
 import { ArrowRightIcon } from "./Icons";
 import { SectionHeading } from "./SectionHeading";
@@ -63,7 +63,12 @@ export function Opportunities({
             <p className="mt-3 leading-relaxed text-muted">{call.summary}</p>
 
             <div className="mt-6">
-              <CallStatus closesOn={call.closesOn} applyUrl={call.applyUrl} newsHref={newsHref} />
+              <CallStatus
+                closesOn={call.closesOn}
+                openAtBuild={isOpen(call.closesOn)}
+                applyUrl={call.applyUrl}
+                newsHref={newsHref}
+              />
             </div>
 
             <h4 className="mt-8 text-sm font-semibold tracking-wider text-muted uppercase">

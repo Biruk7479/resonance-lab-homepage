@@ -1,25 +1,31 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
 import { formatDay, isOpen } from "@/lib/dates";
 import { ArrowRightIcon } from "./Icons";
 
-// The static build renders the status as of build time; the browser then
-// re-checks against today's date, so a stale build never says "open".
+// Today's date never changes while the page is open, so there is nothing to subscribe to.
+const subscribe = () => () => {};
+
+// The static HTML carries the status as of build time (`openAtBuild`).
+// During hydration React compares it with today's date in the browser and
+// re-renders if they differ, so an old build can never say a call is open.
 export function CallStatus({
   closesOn,
+  openAtBuild,
   applyUrl,
   newsHref,
 }: {
   closesOn: string;
+  openAtBuild: boolean;
   applyUrl: string;
   newsHref: string;
 }) {
-  const [open, setOpen] = useState(() => isOpen(closesOn));
-
-  useEffect(() => {
-    setOpen(isOpen(closesOn));
-  }, [closesOn]);
+  const open = useSyncExternalStore(
+    subscribe,
+    () => isOpen(closesOn),
+    () => openAtBuild,
+  );
 
   const closingDay = formatDay(closesOn);
 
