@@ -193,7 +193,7 @@ About **3 hours 45 minutes** of active work (3–4 October 2026). The breakdown 
 
 ## AI and development-tool disclosure
 
-**AI.** This project was built with **Claude Code**, used throughout the analysis, the writing and the implementation. I directed the work and reviewed each step:
+**AI.** This project was built with **Claude Code**, used throughout the analysis, the writing and the implementation. **Freebuff** was also used for a few small tasks. I directed the work and reviewed each step:
 
 - Set the step-by-step process.
 - Added issues to the assessment (emoji icons, boxy navigation, oversized footer, inconsistent fonts, the long header title, load time, the team avatars) and asked for the comparison with similar sites.
