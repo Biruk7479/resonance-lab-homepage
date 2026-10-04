@@ -2,11 +2,13 @@
 
 A review of the [RESONANCE AI4D Lab website](https://sites.google.com/aait.edu.et/resonance-lab/home) (Addis Ababa University) and an improved homepage prototype that keeps the lab's identity while fixing what is wrong underneath.
 
+> **Scope:** only the **homepage** was redesigned, as the exercise asks. Its links to About, Research, Team, News & Events, Get Involved and Contact go to the lab's current site.
+
 | Deliverable | Where |
 |---|---|
 | Brief assessment and prioritised recommendations (2 pages) | [ASSESSMENT-BRIEF.pdf](ASSESSMENT-BRIEF.pdf) |
 | Full assessment with evidence, measurements and benchmarks | [ASSESSMENT.md](ASSESSMENT.md) |
-| Homepage prototype (Next.js, static export) | [src/](src/) · run it with the steps below |
+| Redesigned homepage (the only page rebuilt), Next.js static export | [src/](src/) · screenshots below · run it with the steps below |
 | Design and technical decisions, limitations, time, AI disclosure | This README |
 
 <table><tr>
@@ -21,6 +23,24 @@ A review of the [RESONANCE AI4D Lab website](https://sites.google.com/aait.edu.e
 <br>
 <img src="docs/prototype/after-full-page.jpg" alt="Full prototype homepage: white header, hero, Our Vision, Key Focus Areas, Ready to Join Our Team banner, Our Team strip, partners and footer." width="560">
 </details>
+
+### The redesigned homepage, section by section
+
+<table><tr>
+<td valign="top" width="50%"><img src="docs/prototype/desktop-vision.jpg" alt="Our Vision: mission and motto on the left, the three vision pillars with line icons on the right." width="100%"><br><sub><b>Our Vision</b>: mission, motto and the three pillars, with SVG icons instead of emoji.</sub></td>
+<td valign="top" width="50%"><img src="docs/prototype/desktop-focus-areas.jpg" alt="Key Focus Areas: four white cards, each with a small theme-coloured icon, a summary and its SDG." width="100%"><br><sub><b>Key Focus Areas</b>: the four themes with a summary and the SDG each one serves.</sub></td>
+</tr><tr>
+<td valign="top"><img src="docs/prototype/desktop-join.jpg" alt="Ready to Join Our Team banner in green, marked Closed, with the 2025/26 timeline beside it." width="100%"><br><sub><b>Ready to Join Our Team?</b>: shows Open or Closed from the call's dates, with the timeline.</sub></td>
+<td valign="top"><img src="docs/prototype/desktop-team.jpg" alt="Our Team: a row of cards with initials in theme colours, names and roles." width="100%"><br><sub><b>Our Team</b>: all 11 people from the Team page in a slowly moving strip, with a Pause button.</sub></td>
+</tr><tr>
+<td valign="top" colspan="2"><img src="docs/prototype/desktop-footer.jpg" alt="Partner logos at one small height above a dark green footer with contact details and page links." width="100%"><br><sub><b>Partners and footer</b>: logos at one height with alt text; email, address and page links.</sub></td>
+</tr></table>
+
+<table><tr>
+<td valign="top"><img src="docs/prototype/mobile-menu.jpg" alt="Phone: white header with the menu open, listing the six pages." width="220"><br><sub>Phone menu</sub></td>
+<td valign="top"><img src="docs/prototype/mobile-focus-areas.jpg" alt="Phone: Key Focus Areas heading and the first theme card." width="220"><br><sub>Key Focus Areas on a phone</sub></td>
+<td valign="top"><img src="docs/prototype/mobile-join.jpg" alt="Phone: Ready to Join Our Team banner marked Closed." width="220"><br><sub>Call status on a phone</sub></td>
+</tr></table>
 
 ---
 
@@ -159,7 +179,7 @@ docs/             assessment figures, PDF source (LaTeX), README screenshots
 
 ## Time spent
 
-About **3 hours 25 minutes** of active work (3–4 October 2026). The breakdown comes from commit timestamps:
+About **3 hours 45 minutes** of active work (3–4 October 2026). The breakdown comes from commit timestamps:
 
 | Phase | Time |
 |---|---|
@@ -169,23 +189,16 @@ About **3 hours 25 minutes** of active work (3–4 October 2026). The breakdown 
 | Design rework after review (lab identity, less crowding, calmer colour), re-checks, assessment correction | ~50 min |
 | README, screenshots, clean-up, publishing | ~25 min |
 | Second review round: white header, moving team strip, README update | ~25 min |
+| Final README edits and section screenshots | ~20 min |
 
 ## AI and development-tool disclosure
 
-**AI.** This work was done with **Claude Code**, Anthropic's coding agent (model: Claude Opus 5.5), working in my terminal and repository.
+**AI.** This project was built with **Claude Code**, used throughout the analysis, the writing and the implementation. I directed the work and reviewed each step:
 
-- **The AI agent:**
-  - Crawled and measured the live site, and extracted the content of its 36 embeds.
-  - Ran Lighthouse, axe-core and the screenshot comparisons, and found the benchmark sites.
-  - Drafted the assessment, the PDF and this README.
-  - Wrote the code and ran the checks described above.
-  - Made the commits, which carry a `Co-Authored-By: Claude` trailer.
-- **I:**
-  - Set the step-by-step process.
-  - Added issues to the assessment (emoji icons, boxy navigation, oversized footer, inconsistent fonts, the long header title, load time, the team avatars) and asked for the comparison with similar sites.
-  - Chose the stack (Next.js and Tailwind, for a future CMS and admin area), the typefaces and the team display.
-  - Reviewed every iteration and directed the changes: from generic, to a copy of the old site, to the final middle ground; less crowding; the Director in the same row as the leads; no outline box; calmer focus-area colours; the white header; a moving strip for the whole team.
-- **Errors were caught and corrected:** for example, the AI-drafted assessment first called the avatar colours "unrelated". Revisiting the site's identity after my design feedback showed that they follow the theme coding, and the assessment and PDF were corrected in a separate commit.
+- Set the step-by-step process.
+- Added issues to the assessment (emoji icons, boxy navigation, oversized footer, inconsistent fonts, the long header title, load time, the team avatars) and asked for the comparison with similar sites.
+- Chose the stack (Next.js and Tailwind, for a future CMS and admin area), the typefaces and the team display.
+- Reviewed every iteration and directed the changes: from generic, to a copy of the old site, to the final middle ground; less crowding; the Director in the same row as the leads; no outline box; calmer focus-area colours; the white header; a moving strip for the whole team.
 
 **Development tools:**
 - Node.js 22, Next.js 16.3, React 19.2, TypeScript 5, Tailwind CSS 4, ESLint 9.
