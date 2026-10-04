@@ -31,7 +31,7 @@ export function MobileNav({ nav }: { nav: NavItem[] }) {
         aria-expanded={open}
         aria-controls={panelId}
         onClick={() => setOpen((value) => !value)}
-        className="inline-flex items-center gap-2 rounded-md border border-white/30 px-3 py-2 text-sm font-semibold text-white hover:bg-white/10"
+        className="inline-flex items-center gap-2 rounded-md border border-line px-3 py-2 text-sm font-semibold text-brand-900 hover:bg-brand-50"
       >
         {open ? <CloseIcon className="size-5" /> : <MenuIcon className="size-5" />}
         <span className="max-[399px]:sr-only">Menu</span>
@@ -40,15 +40,15 @@ export function MobileNav({ nav }: { nav: NavItem[] }) {
         id={panelId}
         aria-label="Main"
         hidden={!open}
-        className="absolute inset-x-0 top-full border-t border-white/10 bg-brand-900 shadow-lg"
+        className="absolute inset-x-0 top-full border-b border-line bg-white shadow-lg"
       >
         <ul className="mx-auto max-w-6xl px-4 py-2 sm:px-6">
           {nav.map((item) => (
-            <li key={item.href} className="border-b border-white/10 last:border-b-0">
+            <li key={item.href} className="border-b border-line last:border-b-0">
               <a
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="block py-3 text-base text-white hover:text-leaf-300"
+                className="block py-3 text-base text-ink hover:text-brand-700"
               >
                 {item.label}
               </a>
