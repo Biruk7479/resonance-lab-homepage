@@ -95,8 +95,9 @@ export const homeContent: HomeContent = {
   teamIntro:
     "The RESONANCE AI4D Lab is powered by a dedicated and diverse team of researchers, academics, and professionals committed to leveraging AI for sustainable development in Ethiopia.",
 
-  // Source: Team ("Lab Leadership", "Thematic Leads").
-  leadership: [
+  // Source: Team ("Lab Leadership", "Thematic Leads", "Core Researchers"), in page order.
+  // The Ethical Review Board and the six "To be recruited" roles are not people, so they are left out.
+  team: [
     {
       name: "Dr. Fitsum Assamnew",
       role: "Lab Director / Principal Investigator",
@@ -119,6 +120,36 @@ export const homeContent: HomeContent = {
     {
       name: "Dr. Elefelious Getachew",
       role: "Sustainable Energy & Climate Resilience Lead",
+      theme: "energy",
+    },
+    {
+      name: "Dr. Menore Tekeba",
+      role: "Core Researcher, Innovative Health Solutions",
+      theme: "health",
+    },
+    {
+      name: "Dr. Libsework Negash",
+      role: "Core Researcher, Resilient Agriculture",
+      theme: "agriculture",
+    },
+    {
+      name: "Prof. Alemayehu Lemma",
+      role: "Core Researcher, Resilient Agriculture",
+      theme: "agriculture",
+    },
+    {
+      name: "Dr. Biniam Tadesse",
+      role: "Core Researcher, Inclusive Governance",
+      theme: "governance",
+    },
+    {
+      name: "Lea Mehari",
+      role: "Core Researcher, Inclusive Governance",
+      theme: "governance",
+    },
+    {
+      name: "Dr. Dawit Habtu",
+      role: "Core Researcher, Sustainable Energy",
       theme: "energy",
     },
   ],

@@ -31,6 +31,17 @@
 
   --font-sans: var(--font-inter);
   --font-serif: var(--font-playfair);
+
+  /* Slow continuous scroll for the team strip (translate by one of its two copies). */
+  --animate-marquee: marquee 80s linear infinite;
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
 }
 
 @layer base {
@@ -78,6 +89,7 @@
   *::before,
   *::after {
     animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
 }

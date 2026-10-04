@@ -72,7 +72,7 @@ export interface HomeContent {
   researchIntro: string;
   themes: ResearchTheme[];
   teamIntro: string;
-  leadership: Person[];
+  team: Person[];
   call: Call;
   partners: Partner[];
   contact: Contact;
