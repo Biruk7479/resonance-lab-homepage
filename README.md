@@ -19,7 +19,7 @@ A review of the [RESONANCE AI4D Lab website](https://sites.google.com/aait.edu.e
 
 <details><summary>Show the full prototype page (desktop)</summary>
 <br>
-<img src="docs/prototype/after-full-page.jpg" alt="Full prototype homepage: hero, Our Vision, Key Focus Areas, Ready to Join Our Team banner, Lab Leadership, partners and footer." width="560">
+<img src="docs/prototype/after-full-page.jpg" alt="Full prototype homepage: white header, hero, Our Vision, Key Focus Areas, Ready to Join Our Team banner, Our Team strip, partners and footer." width="560">
 </details>
 
 ---
@@ -73,13 +73,13 @@ On top of that, the homepage still says applications "are now open" for a call t
 
 | Homepage, mobile (Lighthouse 12, simulated slow 4G) | Current site | Prototype |
 |---|---|---|
-| Performance / Accessibility / Best practices / SEO | 34 / 94\* / 79 / 83 | **95 / 100 / 100 / 100** |
-| Largest Contentful Paint | 27.3 s | **2.7 s** |
-| Page weight / requests | 5.6 MB / 65 | **266 KB / 18** |
+| Performance / Accessibility / Best practices / SEO | 34 / 94\* / 79 / 83 | **97 / 100 / 100 / 100** |
+| Largest Contentful Paint | 27.3 s | **2.2 s** |
+| Page weight / requests | 5.6 MB / 65 | **268 KB / 18** |
 | axe-core violations (WCAG 2.2 AA) | not measurable inside the iframes | **0** |
 
 \* Lighthouse can't audit inside the current site's cross-origin iframes, so its 94 overstates the real accessibility.
-Desktop prototype: **100 / 100 / 100 / 100**, with the main content visible in 0.6 s. The prototype was served with gzip (`npx serve out`), as any real host would serve it.
+Desktop prototype: **100 / 100 / 100 / 100**, with the main content visible in 0.7 s. The prototype was served with gzip (`npx serve out`), as any real host would serve it.
 
 ---
 
@@ -90,14 +90,14 @@ Desktop prototype: **100 / 100 / 100 / 100**, with the main content visible in 0
 - **Kept from the current site:**
   - Its green aurora hero image, recompressed from a 1.7 MB PNG to 16 KB (desktop) and 6 KB (phone) WebP.
   - The lab name in Playfair Display, and the dark brand green `#005747`.
-  - The section names and their order: Our Vision → Key Focus Areas → Ready to Join Our Team? → Our Partners.
+  - The section names and their order: Our Vision → Key Focus Areas → Ready to Join Our Team? → Our Partners, with an "Our Team" strip added before the partners.
   - The theme colour-coding (health blue, agriculture green, governance purple, energy amber).
 - **Typography:** five font families become two, both already used by the lab: **Playfair Display** for headings and **Inter** for text, self-hosted (about 70 KB).
 - **First screen:** says who, where and what (the name, the full name, Addis Ababa University and CTBE, and the four focus areas), with two clear actions. The current hero holds only the name.
-- **Navigation:** a single row of text links in the header, including Contact. That replaces the hidden "Home ▾" dropdown and the boxy button rows, which changed from page to page and never included Contact. **Publications is left out** until that page lists real publications (it currently shows "Title goes here").
+- **Navigation:** a white header with a single row of text links, including Contact. That replaces the hidden "Home ▾" dropdown and the boxy button rows, which changed from page to page and never included Contact. **Publications is left out** until that page lists real publications (it currently shows "Title goes here").
 - **Honest call status:** the "Ready to Join Our Team?" banner works out *Open* or *Closed* from the call's dates, in Addis Ababa time. While a call is open it shows the site's own wording and the Apply button. Today it says the 2025/26 call closed on 11 August 2025 and points to News & Events. A future call needs only its title, dates and links updated in the content file; the status then switches by itself.
-- **Calm colour:** theme colours appear only as small icon accents and leadership initials, never as large tinted areas. The banner's gradient ends on a deeper green, so white text stays at 4.9:1 or more (the original lime end is 2.05:1).
-- **People without fake photos:** the Director and the four thematic leads appear as equal cards with two-letter initials in their theme colour. Real photos (with consent) should replace them, and no stock images are used.
+- **Calm colour:** theme colours appear only as small icon accents and team initials, never as large tinted areas. The banner's gradient ends on a deeper green, so white text stays at 4.9:1 or more (the original lime end is 2.05:1).
+- **The whole team, without fake photos:** all 11 people named on the Team page (the Director, four thematic leads and six core researchers) appear in one slowly moving strip, each with two-letter initials in their theme colour. The Director gets the same card as everyone else. Real photos (with consent) should replace the initials, and no stock images are used.
 - **SVG line icons** replace the emoji: they render the same on every device and are hidden from screen readers.
 - **Compact footer** with the lab's full name, email, postal address and page links. The partner logos sit above it at one small height, with alt text.
 - **No invented content.** Every string comes from the live site, and [src/content/home.ts](src/content/home.ts) notes the source page for each section. The placeholder phone number is left out.
@@ -108,7 +108,8 @@ Desktop prototype: **100 / 100 / 100 / 100**, with the main content visible in 0
   - Trade-off: the page still ships about 140 KB of compressed JavaScript, mostly the React runtime. A plain HTML page would be lighter, but performance still scores in the 90s on mobile.
 - **A content layer ready for a CMS.** All homepage text is typed data ([src/content/types.ts](src/content/types.ts), [src/content/home.ts](src/content/home.ts)) behind one async function, `getHomeContent()` in [src/lib/content.ts](src/lib/content.ts). Connecting a CMS means changing that one function; the components stay as they are.
 - **Little client-side JavaScript:**
-  - Only two components run in the browser: the phone menu (a button with `aria-expanded` that closes on Escape) and the call status.
+  - Only three small components run in the browser: the phone menu (a button with `aria-expanded` that closes on Escape), the call status, and the Pause/Play control of the team strip.
+  - The team strip's motion is pure CSS, so it runs before JavaScript loads. The copy that makes the loop seamless is hidden from screen readers. It pauses on hover and with a button (WCAG 2.2.2), and with reduced motion it stays still and scrolls by hand.
   - The call status uses `useSyncExternalStore`. The static HTML carries the status at build time, and the browser re-checks it against today's date during hydration, so an old build can never claim a call is open.
   - Everything else is server-rendered.
 - **Assets:**
@@ -126,16 +127,17 @@ Desktop prototype: **100 / 100 / 100 / 100**, with the main content visible in 0
   - axe-core: 0 violations at 390 and 1440 px.
   - No horizontal scroll at 320, 360, 390, 768, 1024 or 1440 px.
   - Call status tested with a mocked clock: open on 1 August 2025 and at 23:00 on 11 August, closed today.
+  - Team strip tested in the browser: it moves, Pause and hover stop it, it stays still with reduced motion, and screen readers get each of the 11 people once.
 
 ## Project structure
 
 ```
 src/
   app/            layout (fonts, metadata), page, global styles and design tokens, icons
-  components/     Header, MobileNav, Hero, Vision, ResearchThemes, JoinBanner,
-                  CallStatus, Leadership, Partners, SiteFooter, Icons, theme
+  components/     SiteHeader, MobileNav, Hero, Vision, ResearchThemes, JoinBanner,
+                  CallStatus, Team, TeamStrip, Partners, SiteFooter, Icons, theme
   content/        typed homepage content, sourced from the live site
-  lib/            getHomeContent() (CMS entry point), date helpers
+  lib/            getHomeContent() (CMS entry point), date and name helpers
 public/images/    optimised hero, AAU seal and partner logos
 docs/             assessment figures, PDF source (LaTeX), README screenshots
 ```
@@ -148,6 +150,7 @@ docs/             assessment figures, PDF source (LaTeX), README screenshots
 - **No real photography.** The hero uses the lab's existing abstract image, and people are shown as initials. Photos of the lab's people and work would do more than any design change.
 - **Content is as published in October 2026.** The phone number, publications and the next call are missing because the live site doesn't have them. These need the lab.
 - **The phone menu needs JavaScript**, though all pages are also linked in the footer. Call status is re-checked when the page loads, not while it stays open.
+- **The team strip moves on its own.** It can be paused and respects reduced motion, but some visitors find moving content distracting. A static grid would be the alternative if the lab prefers one.
 - **The React runtime** adds weight that a plain HTML page wouldn't have (see the technical decisions).
 - **Tested in Chrome (desktop and mobile emulation) with automated tools only.** No testing on physical devices, other browsers, or with a screen reader by a real user.
 - **No dark mode and no Amharic version.** Both would be worth considering for the lab's audience.
@@ -156,7 +159,7 @@ docs/             assessment figures, PDF source (LaTeX), README screenshots
 
 ## Time spent
 
-About **3 hours**, in one session (3–4 October 2026). The breakdown comes from commit timestamps:
+About **3 hours 25 minutes** of active work (3–4 October 2026). The breakdown comes from commit timestamps:
 
 | Phase | Time |
 |---|---|
@@ -165,6 +168,7 @@ About **3 hours**, in one session (3–4 October 2026). The breakdown comes from
 | First prototype: setup, content model, sections, checks | ~40 min |
 | Design rework after review (lab identity, less crowding, calmer colour), re-checks, assessment correction | ~50 min |
 | README, screenshots, clean-up, publishing | ~25 min |
+| Second review round: white header, moving team strip, README update | ~25 min |
 
 ## AI and development-tool disclosure
 
@@ -180,7 +184,7 @@ About **3 hours**, in one session (3–4 October 2026). The breakdown comes from
   - Set the step-by-step process.
   - Added issues to the assessment (emoji icons, boxy navigation, oversized footer, inconsistent fonts, the long header title, load time, the team avatars) and asked for the comparison with similar sites.
   - Chose the stack (Next.js and Tailwind, for a future CMS and admin area), the typefaces and the team display.
-  - Reviewed every iteration and directed the changes: from generic, to a copy of the old site, to the final middle ground; less crowding; the Director in the same row as the leads; no outline box; calmer focus-area colours.
+  - Reviewed every iteration and directed the changes: from generic, to a copy of the old site, to the final middle ground; less crowding; the Director in the same row as the leads; no outline box; calmer focus-area colours; the white header; a moving strip for the whole team.
 - **Errors were caught and corrected:** for example, the AI-drafted assessment first called the avatar colours "unrelated". Revisiting the site's identity after my design feedback showed that they follow the theme coding, and the assessment and PDF were corrected in a separate commit.
 
 **Development tools:**
